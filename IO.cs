@@ -16,12 +16,12 @@ namespace RoadTime
 
         public static void GetLocalData()
         {
-            string path = Path.Combine(exePath, exePath, @"Data\travelTimeData.json");
+            string path = Path.Combine(exePath, @"Data\travelTimeData.json");
             string input = File.ReadAllText(path);
             var duratiomResult = JsonConvert.DeserializeObject<List<TravelTimeData>>(input);
             if (duratiomResult != null)
                 AppSettings.travelTimeData = duratiomResult;
-            path = Path.Combine(exePath, exePath, @"Data\address.json");
+            path = Path.Combine(exePath, @"Data\address.json");
             input = File.ReadAllText(path);
             var adressList = JsonConvert.DeserializeObject<List<string>>(input);
             if (adressList != null)
