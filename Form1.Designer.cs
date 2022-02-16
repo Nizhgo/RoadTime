@@ -226,7 +226,6 @@
             this.TravelTimeDataGrid.RowTemplate.Height = 29;
             this.TravelTimeDataGrid.Size = new System.Drawing.Size(490, 278);
             this.TravelTimeDataGrid.TabIndex = 21;
-            this.TravelTimeDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TravelTimeDataGrid_CellContentClick);
             // 
             // notifyIcon1
             // 
@@ -278,7 +277,6 @@
             this.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.Resize += new System.EventHandler(this.Form1_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddressDataGrid)).EndInit();
