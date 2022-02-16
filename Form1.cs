@@ -6,6 +6,7 @@ using System.Timers;
 using System.Data;
 using System;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace RoadTime
 
@@ -157,8 +158,9 @@ namespace RoadTime
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 var json = IO.SaveJsonDuration();
-                System.IO.StreamWriter file = new System.IO.StreamWriter( new FileStream(saveFileDialog1.FileName.ToString(), FileMode.CreateNew), Encoding.UTF32);
-                file.Write(json);
+                var parsedJson = Regex.Replace(json, @"\\u([0-9A-Fa-f]{4})", m => "" + (char)Convert.ToInt32(m.Groups[1].Value, 16));
+                StreamWriter file = new StreamWriter( new FileStream(saveFileDialog1.FileName.ToString(), FileMode.CreateNew), Encoding.UTF32);
+                file.Write(parsedJson);
                 file.Close();
             }
         }
