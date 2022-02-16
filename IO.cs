@@ -91,5 +91,16 @@ namespace RoadTime
             AppSettings.timers.AddRange(candidate);
             return true;
         }
+
+        internal static bool DeleteAdress(int index)
+        {
+            if (AppSettings.address.Count >= index)
+            {
+                AppSettings.address.RemoveAt(index);
+                IO.LocalSaveAddress();
+                return true;
+            }
+            return false;
+        }
     }
 }

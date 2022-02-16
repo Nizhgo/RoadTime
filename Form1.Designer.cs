@@ -211,6 +211,7 @@
             this.AddressDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.AddressDataGrid.Size = new System.Drawing.Size(207, 207);
             this.AddressDataGrid.TabIndex = 20;
+            this.AddressDataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AddressDataGrid_CellDoubleClick);
             // 
             // TravelTimeDataGrid
             // 

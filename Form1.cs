@@ -164,5 +164,21 @@ namespace RoadTime
                 file.Close();
             }
         }
+
+        private void AddressDataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            DialogResult dialogResult = MessageBox.Show("Вы действльнно хотите удалить адрес: «" + AppSettings.address[e.RowIndex] + "»", "Удалить?", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                bool success = IO.DeleteAdress(e.RowIndex);
+                if (success)
+                {
+                    AdressDataGirdUpdate();
+                    return;
+                }
+            }
+            Message("Не получилось удалить адрес!");
+        }
     }
 }
